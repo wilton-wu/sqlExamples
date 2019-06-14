@@ -15,7 +15,7 @@ mysqldump -u username -p db1 --single-transaction --quick --lock-tables=false > 
 mysqldump -u username -p --single-transaction --quick --lock-tables=false db1 table1 > db1-table1-$(date +%F).sql
 ```
 
-## mysqldump + cron
+## crontab
 
 ```
 # .my.cnf
