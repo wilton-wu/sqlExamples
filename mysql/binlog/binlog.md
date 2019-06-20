@@ -17,4 +17,8 @@ show binlog events;
 # 查看指定binlog文件内容
 show binlog events [in 'log_name'] [from pos] [limit [offset,] row_count];
 show binlog events in 'mysql-bin.000002' from 1190 limit 2\G;
+
+# slave-master
+slave start util master_log_file='mysql-bin.000012',master_log_pos=2034592;
+change master to master_log_file='mysql-bin.000012',master_log_pos=2034634;
 ```

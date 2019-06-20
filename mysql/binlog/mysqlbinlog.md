@@ -1,11 +1,5 @@
 # mysqlbinlog
 
-## 远程获取binlog
-
-```
-mysqlbinlog -u user -p -h xxx.mysql.rds.aliyun.com  --read-from-remote-server mysql-bin.000497 > a.binlog
-```
-
 ## 查看
 
 ```
@@ -19,6 +13,10 @@ mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 
 # 基于pos值
 --start-postion=107 --stop-position=1000
+
+# 过滤指定表
+# -B, before, 前面; -A, after, 后面
+grep -B3 -A6 -w tb_name data.sql | grep -v '^--$' > tb_name.sql
 ```
 
 ## 恢复
@@ -27,3 +25,10 @@ mysqlbinlog -vv --base64-output=decode-rows mysqlbinlog.0001
 mysqlbinlog --start-position=1847 --stop-position=2585 mysql-bin.000008 > test.sql
 mysql> source /var/lib/mysql/3306/test.sql
 ```
+
+## 远程获取binlog
+
+```
+mysqlbinlog -u user -p -h xxx.mysql.rds.aliyun.com  --read-from-remote-server mysql-bin.000497 > a.binlog
+```
+
