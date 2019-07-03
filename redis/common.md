@@ -9,7 +9,6 @@ del <key>  # 删除一个<key>
 expire <key> <seconds>  # 设定<key>的活动时间
 ttl <key>  # 获得<key>的活动时间 (-1, 永不过期; -2, 已经过期)
 incr <key>  # 让<key>的值自增
-
 ```
 
 ## list, 列表
