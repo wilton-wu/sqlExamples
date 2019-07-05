@@ -10,6 +10,12 @@ explain显示了mysql如何使用索引来处理select语句以及连接表,
 Explain select columnName from mytable where columnName2 = "something";
 ```
 
+## 重新整理表
+
+```
+alter table tablename engine=innodb;
+```
+
 ## 用新表替换旧表
 
 ```
