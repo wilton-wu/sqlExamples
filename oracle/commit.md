@@ -7,6 +7,4 @@ sql语言分为五大类：
   + DTL，事务控制语言，Commit、Rollback事务提交与回滚语句
   + DCL，数据控制语言，Grant、Revoke授予权限与回收权限语句
 
-执行完DML语句，若没有commit再执行DDL语句，也会自动commit未被commit的数据。
-
-如果打开自动提交，DML操作后也不需要手动提交：`SET AUTOCOMMIT ON;`
+Oracle数据库的默认事务隔离级别是提交读（Read Committed）。提交数据有三种类型：显式提交、隐式提交及自动提交。执行命令`COMMIT`完成的提交为显式提交；执行完DML语句，若没有commit再执行DDL语句，也会自动commit未被commit的数据，称为隐式提交；如果打开自动提交，DML操作后也不需要手动提交：`SET AUTOCOMMIT ON;`，这种叫做自动提交。可以使用`show autocommit`语句查看当前是否设置为自动提交。
