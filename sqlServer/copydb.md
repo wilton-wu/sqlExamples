@@ -8,6 +8,7 @@ GO
 SELECT @@Version
 GO
 
+-- 源库: testddb, 新复制出来的库: testdb_copy
 EXEC sp_rds_copy_database 'testdb','testdb_copy'
 SELECT *
 FROM sys.databases
