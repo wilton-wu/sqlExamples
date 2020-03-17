@@ -13,6 +13,9 @@ drop table if exists tbname;
 # 查看表创建的语句
 show create table tbname\G;
 
+# 查看列
+show columns from tablename;
+
 # 查看表存储大小和存储行数
 select table_name, (data_length+index_length)/1024/1024 as total_mb, \
        table_rows from information_schema.tables where table_schema='dbname';
