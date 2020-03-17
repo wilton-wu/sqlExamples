@@ -30,6 +30,6 @@ drop user username1@'%';
 ```sql
 # 创建数据库
 create database exampledb default character set utf8 collate utf8_general_ci;
-grant all privileges on exampledb to 'exampleuser'@'127.0.0.1' identified by 'examplepasswd';
+grant all privileges on exampledb.* to 'exampleuser'@'127.0.0.1' identified by 'examplepasswd';
 flush privileges;
 ```
