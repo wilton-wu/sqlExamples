@@ -19,6 +19,9 @@ show columns from tablename;
 # 查看表存储大小和存储行数
 select table_name, (data_length+index_length)/1024/1024 as total_mb, \
        table_rows from information_schema.tables where table_schema='dbname';
+
+# 重命名表
+alter table table_name rename to new_table_name;
 ```
 
 ## 一条sql语句分多行输入
