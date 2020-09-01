@@ -14,6 +14,9 @@ mysqldump -uroot -ppassword --databases exampledb > /path/to/exampledb.sql
 # 导出指定表
 mysqldump -uroot -ppassword exampledb exampletable > /path/to/exampletable.sql
 
+# 导出多张表
+mysqldump -uroot -ppassword exampledb table1 table2 > /path/to/tables.sql
+
 # 导出表数据到文件中
 select * from table1 into outfile '/path/to/a.txt';
 ```

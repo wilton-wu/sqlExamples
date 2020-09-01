@@ -22,6 +22,15 @@ select table_name, (data_length+index_length)/1024/1024 as total_mb, \
 
 # 重命名表
 alter table table_name rename to new_table_name;
+
+# 一次性删除多个index
+ALTER TABLE mytable
+    DROP INDEX ndx1,
+    DROP INDEX ndx2,
+    DROP INDEX ndx3;
+
+# 查找表
+show tables like 'test%';
 ```
 
 ## 一条sql语句分多行输入
