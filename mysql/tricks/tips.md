@@ -31,6 +31,10 @@ ALTER TABLE mytable
 
 # 查找表
 show tables like 'test%';
+
+# 查询出排除id字段的其他字段
+select concat('select', GROUP_CONCAT(column_name), ' from ', table_name, ';') 
+from information_schema.COLUMNS where table_name="haha" and table_schema="heidb" and column_name != "id";
 ```
 
 ## 一条sql语句分多行输入
