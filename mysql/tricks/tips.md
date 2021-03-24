@@ -1,6 +1,10 @@
 # tips
 
 ```
+# 将查询结果进行组合
+select group_concat(id) as video_list 
+    from videos where duration=0;
+
 # 拼出删除多张表的语句
 select concat('drop table ', group_concat(table_name), ';')
     as statement from information_schema.tables
